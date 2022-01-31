@@ -1,10 +1,10 @@
-import { useMemo, usememo } from "react";
+import { useMemo } from "react";
 import { createStore, applyMiddleware, combineReducers } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import ThunkMiddleware from "redux-thunk";
 import tarotReducer from "./reducers/tarotReducer";
 
-let store
+let store;
 
 const combined = combineReducers({
   tarot: tarotReducer,
