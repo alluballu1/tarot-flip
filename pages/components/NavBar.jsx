@@ -5,20 +5,20 @@ const NavBar = () => {
   return (
     <nav
       style={{ padding: 20, background: "#301934", position:"fixed", zIndex:100000, width:"100%"}}
-      class="navbar navbar-expand-lg navbar-dark "
+      className="navbar navbar-expand-lg navbar-dark "
     >
-      <a class="navbar-brand" href="#">
+      <a className="navbar-brand" href="#">
         <Stars size={34} />
       </a>
-      <a class="navbar-brand">TarotFlip</a>
+      <a className="navbar-brand">TarotFlip</a>
 
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
+      <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div className="navbar-nav">
           <Link href={"/"}>
-            <a class="nav-item nav-link">Home</a>
+            <a className="nav-item nav-link">Home</a>
           </Link>
           <Link href={"/screens/TarotScreen"}>
-            <a class="nav-item nav-link">Table</a>
+            <a className="nav-item nav-link">Table</a>
           </Link>
         </div>
       </div>
