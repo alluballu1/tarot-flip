@@ -4,8 +4,19 @@ import Link from "next/link";
 //import styles from '../styles/Home.module.css'
 import "bootstrap/dist/css/bootstrap.min.css";
 import bg from "/pages/images/background/alexis-stahnke-final-gif.gif";
+import { useDispatch } from "react-redux";
+import { fetchAll } from "../reducers/tarotReducer";
+import { useEffect } from "react";
+
 
 export default function Home() {
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(fetchAll())
+  }, [dispatch]);
+  
+
   const styles = {
     imageStyle: {
       position: "fixed",
@@ -27,6 +38,7 @@ export default function Home() {
     contentContainer: {
       background: "black",
       zIndex: 1,
+      display:"flex-wrap",
       width: "75%",
       minHeight: "90vh",
       opacity: "75%",

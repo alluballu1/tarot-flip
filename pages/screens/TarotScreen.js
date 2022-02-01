@@ -1,25 +1,61 @@
 import Link from "next/link";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { Image } from "react-bootstrap";
+import bg from "../images/background/alexis-stahnke-final-gif.gif";
 
 const TarotScreen = () => {
   const styles = {
-    containerStyle: { height: "100vh", backgroundColor: "black" },
-    textStyle: {
-      color: "black",
-      fontSize: 50,
+    imageStyle: {
+      position: "fixed",
+      height: "100vh",
+      width: "100vw",
+      overflow: "hidden",
+      zIndex: -100,
+    },
+    titleStyle: {
+      borderBottomStyle: "solid",
+
+      borderBottomWidth: 1,
+      borderBottomColor: "white",
+      color: "white",
+      marginTop: 100,
+      fontSize: "5vw",
+      textAlign: "center",
+    },
+    contentContainer: {
+      background: "black",
+      zIndex: 1,
+      display:"flex-wrap",
+      width: "75%",
+      minHeight: "90vh",
+      opacity: "75%",
+      height:"fit-content",
+      marginTop: 50,
+      borderRadius: 25,
     },
   };
   return (
-    <div className="container-fluid">
-      <Link href={"/"}>
-        <p className="text-muted" style={styles.textStyle}>This is a text sample hello </p>
-      </Link>
-      <p className="h1">h1. Bootstrap heading</p>
-      <p className="h2">h2. Bootstrap heading</p>
-      <p className="h3">h3. Bootstrap heading</p>
-      <p className="h4">h4. Bootstrap heading</p>
-      <p className="h5">h5. Bootstrap heading</p>
-      <p className="h6">h6. Bootstrap heading</p>
+    <div
+      style={{
+        width: "100vw",
+        display: "flex",
+        justifyContent: "center",
+        height: "100%",
+      }}
+    >
+      <div style={styles.imageStyle}>
+        <Image
+          alt="bg"
+          src={"../images/background/alexis-stahnke-final-gif.gif"}
+          layout="fill"
+          objectFit="cover"
+          quality={100}
+        />
+      </div>
+
+      <div className="container-s" style={styles.contentContainer}>
+       
+      </div>
     </div>
   );
 };
