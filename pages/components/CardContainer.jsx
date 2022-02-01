@@ -21,7 +21,8 @@ const CardContainer = (props) => {
           background: "white",
           padding: 25,
           borderWidth:1,
-          borderStyle:"solid"
+          borderStyle:"solid",
+          cursor:"move"
         }}
         dragMomentum={0}
         drag
