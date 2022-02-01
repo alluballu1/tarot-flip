@@ -1,12 +1,18 @@
-import Head from "next/head";
 import Image from "next/image";
-import Link from "next/link";
 //import styles from '../styles/Home.module.css'
 import "bootstrap/dist/css/bootstrap.min.css";
 import bg from "/pages/images/background/alexis-stahnke-final-gif.gif";
-import Draggable from "react-draggable";
+
+import CardContainer from "../components/CardContainer";
 
 const TarotScreen = () => {
+  const testList = [
+    "clubs01.jpg",
+    "clubs02.jpg",
+    "clubs03.jpg",
+    "clubs04.jpg",
+    "clubs05.jpg",
+  ];
   const styles = {
     imageStyle: {
       position: "fixed",
@@ -33,13 +39,12 @@ const TarotScreen = () => {
       minHeight: "90vh",
       opacity: "75%",
       height: "fit-content",
-      marginTop: 50,
+      marginTop: 100,
       borderRadius: 25,
     },
     draggableStyle: {
       transform: "rotate(80deg)",
-      background: "pink"
-      
+      background: "pink",
     },
   };
   return (
@@ -61,14 +66,9 @@ const TarotScreen = () => {
         />
       </div>
       <div style={styles.contentContainer}>
-        <Draggable>
-          <div style={styles.draggableStyle}>
-            <div>
-              <p style={{ color: "white" }}>Drag from here</p>
-            </div>
-            <div>This readme is really dragging on...</div>
-          </div>
-        </Draggable>
+        {testList.map((element) => {
+          return <CardContainer card={element} />;
+        })}
       </div>
     </div>
   );
