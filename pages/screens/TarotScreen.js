@@ -1,7 +1,10 @@
+import Head from "next/head";
+import Image from "next/image";
 import Link from "next/link";
+//import styles from '../styles/Home.module.css'
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Image } from "react-bootstrap";
-import bg from "../images/background/alexis-stahnke-final-gif.gif";
+import bg from "/pages/images/background/alexis-stahnke-final-gif.gif";
+import Draggable from "react-draggable";
 
 const TarotScreen = () => {
   const styles = {
@@ -25,13 +28,18 @@ const TarotScreen = () => {
     contentContainer: {
       background: "black",
       zIndex: 1,
-      display:"flex-wrap",
-      width: "75%",
+      display: "flex-wrap",
+      width: "95%",
       minHeight: "90vh",
       opacity: "75%",
-      height:"fit-content",
+      height: "fit-content",
       marginTop: 50,
       borderRadius: 25,
+    },
+    draggableStyle: {
+      transform: "rotate(80deg)",
+      background: "pink"
+      
     },
   };
   return (
@@ -46,15 +54,21 @@ const TarotScreen = () => {
       <div style={styles.imageStyle}>
         <Image
           alt="bg"
-          src={"../images/background/alexis-stahnke-final-gif.gif"}
+          src={bg}
           layout="fill"
           objectFit="cover"
           quality={100}
         />
       </div>
-
-      <div className="container-s" style={styles.contentContainer}>
-       
+      <div style={styles.contentContainer}>
+        <Draggable>
+          <div style={styles.draggableStyle}>
+            <div>
+              <p style={{ color: "white" }}>Drag from here</p>
+            </div>
+            <div>This readme is really dragging on...</div>
+          </div>
+        </Draggable>
       </div>
     </div>
   );

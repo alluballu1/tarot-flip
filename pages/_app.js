@@ -13,7 +13,6 @@ function MyApp({ Component, pageProps }) {
   return (
     <Provider store={store}>
       <NavBar />
-
       <Component {...pageProps} />
     </Provider>
   );
