@@ -35,7 +35,7 @@ const NavBar = () => {
 
             <Link href={"/screens/TarotScreen"}>
               <a className="text-muted" style={styles.linkStyle}>
-                Margin
+                Table
               </a>
             </Link>
           </Nav>
