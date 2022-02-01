@@ -66,8 +66,12 @@ const TarotScreen = () => {
         />
       </div>
       <div style={styles.contentContainer}>
-        {testList.map((element) => {
-          return <CardContainer card={element} />;
+        {testList.map((element, index) => {
+          return (
+            <div key={index}>
+              <CardContainer card={element} />
+            </div>
+          );
         })}
       </div>
     </div>
