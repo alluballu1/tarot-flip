@@ -4,15 +4,28 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import bg from "/pages/images/background/alexis-stahnke-final-gif.gif";
 
 import CardContainer from "../components/CardContainer";
+import { useState } from "react";
+import DeckSelectorModal from "../components/DeckSelectorModal";
+import { useDispatch, useSelector } from "react-redux";
+import { selectDeck } from "../../reducers/tarotReducer";
 
 const TarotScreen = () => {
-  const testList = [
+
+  const listOfCards = useSelector(state => state.tarot)
+  const dispatch = useDispatch()
+  const [testList, setTestList] = useState([/* 
     "clubs01.jpg",
     "clubs02.jpg",
     "clubs03.jpg",
     "clubs04.jpg",
-    "clubs05.jpg",
-  ];
+    "clubs05.jpg", */
+  ]);
+
+  const appenderFunction = () => {
+    console.log(listOfCards)
+    const random = Math.floor(Math.random() * 9) + 1;
+    setTestList((arr) => [...arr, `clubs0${random}.jpg`]);
+  };
   const styles = {
     imageStyle: {
       position: "fixed",
@@ -32,49 +45,50 @@ const TarotScreen = () => {
       textAlign: "center",
     },
     contentContainer: {
-      background: "black",
+      background: "rgba(0,0,0,0.75)",
       zIndex: 1,
-      display: "flex-wrap",
+      display: "flex",
       width: "95%",
       minHeight: "90vh",
-      opacity: "75%",
       height: "fit-content",
       marginTop: 100,
       borderRadius: 25,
     },
-    draggableStyle: {
-      transform: "rotate(80deg)",
-      background: "pink",
-    },
   };
   return (
-    <div
-      style={{
-        width: "100vw",
-        display: "flex",
-        justifyContent: "center",
-        height: "100%",
-      }}
-    >
-      <div style={styles.imageStyle}>
-        <Image
-          alt="bg"
-          src={bg}
-          layout="fill"
-          objectFit="cover"
-          quality={100}
-        />
+    <><DeckSelectorModal deckSelect={(val) => dispatch(selectDeck(val))} />
+      <div
+        style={{
+          width: "100vw",
+          display: "flex",
+          justifyContent: "center",
+          height: "100%",
+        }}
+      >
+        
+        <div style={styles.imageStyle}>
+          <Image
+            alt="bg"
+            src={bg}
+            layout="fill"
+            objectFit="cover"
+            quality={100}
+          />
+        </div>
+        {listOfCards.length > 0 && <div style={{...styles.contentContainer, flexDirection:"row"}}>
+          <div style={{ width: 220, height: 350, background: "White", borderRadius: 10, display:"flex", justifyContent:"center", alignItems:"center" }}>
+            <p>NUMBER OF CARDS</p>
+          </div>
+          {testList.map((element, index) => {
+            return (
+              <div key={index}>
+                <CardContainer card={element} />
+              </div>
+            );
+          })}
+        </div>}
       </div>
-      <div style={styles.contentContainer}>
-        {testList.map((element, index) => {
-          return (
-            <div key={index}>
-              <CardContainer card={element} />
-            </div>
-          );
-        })}
-      </div>
-    </div>
+    </>
   );
 };
 
