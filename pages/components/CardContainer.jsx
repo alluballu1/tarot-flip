@@ -4,6 +4,9 @@ import React, { useState } from "react";
 import { ArrowRepeat } from "react-bootstrap-icons";
 const CardContainer = (props) => {
   const [rotation, setRotation] = useState(0);
+  if(!props.card){
+    return null
+  }
   return (
     <div
       style={{
