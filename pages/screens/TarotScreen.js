@@ -10,21 +10,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectDeck } from "../../reducers/tarotReducer";
 
 const TarotScreen = () => {
-
-  const listOfCards = useSelector(state => state.tarot)
-  const dispatch = useDispatch()
-  const [testList, setTestList] = useState([/* 
-    "clubs01.jpg",
-    "clubs02.jpg",
-    "clubs03.jpg",
-    "clubs04.jpg",
-    "clubs05.jpg", */
-  ]);
+  const listOfCards = useSelector((state) => state.tarot);
+  const dispatch = useDispatch();
+  const [usedList, setUsedList] = useState([]);
 
   const appenderFunction = () => {
-    console.log(listOfCards)
-    const random = Math.floor(Math.random() * 9) + 1;
-    setTestList((arr) => [...arr, `clubs0${random}.jpg`]);
+    console.log(listOfCards);
+    const random = Math.floor(Math.random() * Object.keys(listOfCards[0]).length) + 1;
+    console.log(listOfCards[0][random])
+    /* setUsedList((arr) => [...arr, `clubs0${random}.jpg`]); */
   };
   const styles = {
     imageStyle: {
@@ -54,9 +48,29 @@ const TarotScreen = () => {
       marginTop: 100,
       borderRadius: 25,
     },
+    cardBackStyle: {
+      cursor: "pointer",
+      width: 220,
+      height: 350,
+      borderRadius: 10,
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+    },
+    countStyle: {
+      background: "white",
+      padding: 8,
+      borderRadius: "50%",
+      textAlign: "center",
+      alignSelf: "center",
+      width: 40,
+      height: 40,
+    }
+
   };
   return (
-    <><DeckSelectorModal deckSelect={(val) => dispatch(selectDeck(val))} />
+    <>
+      <DeckSelectorModal deckSelect={(val) => dispatch(selectDeck(val))} />
       <div
         style={{
           width: "100vw",
@@ -65,7 +79,6 @@ const TarotScreen = () => {
           height: "100%",
         }}
       >
-        
         <div style={styles.imageStyle}>
           <Image
             alt="bg"
@@ -75,18 +88,29 @@ const TarotScreen = () => {
             quality={100}
           />
         </div>
-        {listOfCards.length > 0 && <div style={{...styles.contentContainer, flexDirection:"row"}}>
-          <div style={{ width: 220, height: 350, background: "White", borderRadius: 10, display:"flex", justifyContent:"center", alignItems:"center" }}>
-            <p>NUMBER OF CARDS</p>
-          </div>
-          {testList.map((element, index) => {
-            return (
-              <div key={index}>
-                <CardContainer card={element} />
+        <div style={styles.contentContainer}>
+          {listOfCards.length > 0 && (
+            <div style={{ display: "flex", flexDirection: "row" }}>
+              <div
+                onClick={() => appenderFunction()}
+                style={styles.cardBackStyle}
+              >
+                <p
+                  style={styles.countStyle}
+                >
+                  {Object.keys(listOfCards[0]).length + 1}
+                </p>
               </div>
-            );
-          })}
-        </div>}
+              {usedList.map((element, index) => {
+                return (
+                  <div key={index}>
+                    <CardContainer card={element} />
+                  </div>
+                );
+              })}
+            </div>
+          )}
+        </div>
       </div>
     </>
   );

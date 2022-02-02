@@ -20,7 +20,12 @@ export const selectDeck = (value) => {
             data: data
         })
     }
- }
+}
+ 
+export const removeCard = (value) => {
+    return async (dispatch) => {
+    }
+}
 
 const tarotReducer = (state = [], action) => {
     switch (action.type) {

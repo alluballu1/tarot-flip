@@ -3,7 +3,11 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 
 const DeckSelectorModal = (props) => {
-  const [visibility, setVisibility] = useState(true);
+    const [visibility, setVisibility] = useState(true);
+    const selectHandler = (value) => {
+        props.deckSelect(value)
+        setVisibility(!visibility)
+    }
   return (
     <Modal
       show={visibility}
@@ -11,12 +15,9 @@ const DeckSelectorModal = (props) => {
       aria-labelledby="contained-modal-title-vcenter"
       centered
     >
-      <Modal.Header
-        style={{ background: "#301934", color: "white" }}
-        closeButton
-      >
-        <Modal.Title id="contained-modal-title-vcenter">
-          Modal heading
+      <Modal.Header style={{ background: "#301934", color: "white" }}>
+        <Modal.Title >
+          Select Tarot Deck-type
         </Modal.Title>
       </Modal.Header>
       <Modal.Body
@@ -28,8 +29,12 @@ const DeckSelectorModal = (props) => {
           justifyContent: "space-evenly",
         }}
       >
-        <Button onClick={() => props.deckSelect(0)}>Deck 1</Button>
-        <Button onClick={() => props.deckSelect(1)}>Deck 2</Button>
+        <Button variant="outline-light" onClick={() => selectHandler(0)}>
+          Tarot Thoth
+        </Button>
+        <Button variant="outline-light" onClick={() => selectHandler(1)}>
+          Rider–Waite
+        </Button>
       </Modal.Body>
     </Modal>
   );
