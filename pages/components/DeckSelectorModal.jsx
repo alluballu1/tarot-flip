@@ -32,7 +32,7 @@ const DeckSelectorModal = (props) => {
         <Button variant="outline-light" onClick={() => selectHandler(0)}>
           Tarot Thoth
         </Button>
-        <Button variant="outline-light" onClick={() => selectHandler(1)}>
+        <Button disabled variant="outline-light" onClick={() => selectHandler(1)}>
           Rider–Waite
         </Button>
       </Modal.Body>

@@ -40,7 +40,7 @@ const CardContainer = (props) => {
             fontSize:15
           }}
         >
-          Six of Swords
+          {props.card.name}
           <ArrowRepeat
             size={42}
             style={{
@@ -57,7 +57,7 @@ const CardContainer = (props) => {
             onClick={() => setRotation(rotation + 90)}
           />
         </div>
-        <Image alt={props.card} src={"/tarotThoth/9-of-swords-thoth.png" /* `/tarot/${props.card}` */} width={200} height={300} />
+        <Image alt={props.card} src={`/tarotThoth/${props.card.cardName}` /* `/tarot/${props.card}` */} width={200} height={300} />
       </motion.div>
     </div>
   );

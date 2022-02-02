@@ -7,7 +7,7 @@ import CardContainer from "../components/CardContainer";
 import { useState } from "react";
 import DeckSelectorModal from "../components/DeckSelectorModal";
 import { useDispatch, useSelector } from "react-redux";
-import { selectDeck } from "../../reducers/tarotReducer";
+import { removeCard, selectDeck } from "../../reducers/tarotReducer";
 
 const TarotScreen = () => {
   const listOfCards = useSelector((state) => state.tarot);
@@ -15,10 +15,12 @@ const TarotScreen = () => {
   const [usedList, setUsedList] = useState([]);
 
   const appenderFunction = () => {
-    console.log(listOfCards);
-    const random = Math.floor(Math.random() * Object.keys(listOfCards[0]).length) + 1;
-    console.log(listOfCards[0][random])
-    /* setUsedList((arr) => [...arr, `clubs0${random}.jpg`]); */
+   if(listOfCards.length>0){
+         const random = Math.floor(Math.random() * listOfCards.length) ;
+    setUsedList(arr => [...arr, listOfCards[random]])
+    dispatch(removeCard(listOfCards[random]))
+   }
+
   };
   const styles = {
     imageStyle: {
@@ -56,6 +58,7 @@ const TarotScreen = () => {
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
+      background:"grey"
     },
     countStyle: {
       background: "white",
@@ -98,7 +101,7 @@ const TarotScreen = () => {
                 <p
                   style={styles.countStyle}
                 >
-                  {Object.keys(listOfCards[0]).length + 1}
+                  {listOfCards.length}
                 </p>
               </div>
               {usedList.map((element, index) => {
