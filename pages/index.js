@@ -3,16 +3,10 @@ import Image from "next/image";
 //import styles from '../styles/Home.module.css'
 import "bootstrap/dist/css/bootstrap.min.css";
 import bg from "/pages/images/background/alexis-stahnke-final-gif.gif";
-import { useDispatch } from "react-redux";
-import { fetchAll } from "../reducers/tarotReducer";
-import { useEffect } from "react";
+
 
 export default function Home() {
-  const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(fetchAll());
-  }, [dispatch]);
 
   const styles = {
     imageStyle: {

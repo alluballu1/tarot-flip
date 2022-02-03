@@ -91,9 +91,9 @@ const TarotScreen = () => {
             quality={100}
           />
         </div>
-        <div style={styles.contentContainer}>
+        <div style={{...styles.contentContainer, display: "flex", flexDirection: "row" }}>
           {listOfCards.length > 0 && (
-            <div style={{ display: "flex", flexDirection: "row" }}>
+            <div >
               <div
                 onClick={() => appenderFunction()}
                 style={styles.cardBackStyle}
@@ -104,15 +104,15 @@ const TarotScreen = () => {
                   {listOfCards.length}
                 </p>
               </div>
-              {usedList.map((element, index) => {
+            </div>
+          )}
+          {usedList.map((element, index) => {
                 return (
                   <div key={index}>
                     <CardContainer card={element} />
                   </div>
                 );
               })}
-            </div>
-          )}
         </div>
       </div>
     </>
