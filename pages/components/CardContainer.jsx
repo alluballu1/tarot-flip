@@ -8,7 +8,11 @@ const CardContainer = (props) => {
   if (!props.card) {
     return null;
   }
+  if (typeof window === "undefined" | undefined) {
+    return null
+  }
   return (
+
     <div
       style={{
         dislpay: "flex",
