@@ -13,6 +13,7 @@ const CardContainer = (props) => {
   
   const scale = window.innerHeight+window.innerWidth
   return (
+
     <div
       style={{
         dislpay: "flex",
