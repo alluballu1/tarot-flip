@@ -3,7 +3,6 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { ArrowRepeat } from "react-bootstrap-icons";
 const CardContainer = (props) => {
-  const scale = window.outerHeight+window.outerWidth
   const [rotation, setRotation] = useState(0);
   if (!props.card) {
     return null;
@@ -11,6 +10,8 @@ const CardContainer = (props) => {
   if (typeof window === "undefined" | undefined) {
     return null
   }
+  
+  const scale = window.outerHeight+window.outerWidth
   return (
 
     <div
