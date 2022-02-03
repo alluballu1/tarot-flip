@@ -7,77 +7,77 @@ const CardContainer = (props) => {
   if (!props.card) {
     return null;
   }
-  if (typeof window === "undefined" | undefined) {
-    return null
+  if ((typeof window === "undefined") | undefined) {
+    return null;
   }
-  
-  const scale = window.innerHeight+window.innerWidth
-  return (
 
-    <div
-      style={{
-        dislpay: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        opacity: "100%",
-        transform:`scale(${scale/3000})`
-      }}
-      
-      id="tarot-motion-container"
-    >
-      <motion.div
+  const scale = window.innerHeight + window.innerWidth;
+  return (
+   
+      <div
         style={{
-          position: "absolute",
-          width: 220,
-          height:350,
-          zIndex: 10,
-          background: "white",
-          borderWidth: 1,
-          borderStyle: "solid",
-          cursor: "move",
-          borderRadius: 10,
-          padding: 10,
+          dislpay: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          position: "relative",
+          transformOrigin: "top left",
+          opacity: "100%",
+          transform: `scale(${(scale / 2920) * props.scaleRatio})`,
         }}
-        dragMomentum={0}
-        drag
-        draggable
-        animate={{ rotate: rotation }}
       >
-        <div
+        <motion.div
           style={{
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "space-evenly",
-            fontSize: 15,
+            position: "fixed",
+            width: 220,
+            height: 350,
+            zIndex: 10,
+            background: "white",
+            borderWidth: 1,
+            borderStyle: "solid",
+            cursor: "move",
+            borderRadius: 10,
+            padding: 10,
           }}
+
+        id="tarot-motion-container"
+          dragMomentum={0}
+          drag
+          draggable
+          animate={{ rotate: rotation }}
         >
-          {props.card.name}
-          <ArrowRepeat
-            size={42}
+          <div
             style={{
-              background: "white",
-              cursor: "pointer",
-              position: "absolute",
-              right: -15,
-              top: -20,
-              color: "black",
-              borderRadius: "50%",
-              borderStyle: "solid",
-              borderWidth: 1,
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "space-evenly",
+              fontSize: 15,
             }}
-            onClick={() => setRotation(rotation + 90)}
+          >
+            {props.card.name}
+            <ArrowRepeat
+              size={42}
+              style={{
+                background: "white",
+                cursor: "pointer",
+                position: "absolute",
+                right: -15,
+                top: -20,
+                color: "black",
+                borderRadius: "50%",
+                borderStyle: "solid",
+                borderWidth: 1,
+              }}
+              onClick={() => setRotation(rotation + 90)}
+            />
+          </div>
+          <Image
+            alt={props.card}
+            src={`/tarotThoth/${props.card.cardName}`}
+            width={200}
+            height={300}
           />
-        </div>
-        <Image
-          alt={props.card}
-          src={
-            `/tarotThoth/${props.card.cardName}` /* `/tarot/${props.card}` */
-          }
-          width={200}
-          height={300}
-        />
-      </motion.div>
-    </div>
+        </motion.div>
+      </div>
   );
 };
 

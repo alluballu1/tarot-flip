@@ -2,24 +2,24 @@ import Image from "next/image";
 //import styles from '../styles/Home.module.css'
 import "bootstrap/dist/css/bootstrap.min.css";
 import bg from "/pages/images/background/alexis-stahnke-final-gif.gif";
-
+import { ZoomIn, ZoomOut, ArrowCounterclockwise } from "react-bootstrap-icons";
 import CardContainer from "../components/CardContainer";
 import { useState } from "react";
 import DeckSelectorModal from "../components/DeckSelectorModal";
 import { useDispatch, useSelector } from "react-redux";
 import { removeCard, selectDeck } from "../../reducers/tarotReducer";
+import { Button } from "react-bootstrap";
 
 const TarotScreen = () => {
-
-
   const listOfCards = useSelector((state) => state.tarot);
   const dispatch = useDispatch();
   const [usedList, setUsedList] = useState([]);
+  const [scaleRatio, setScaleRatio] = useState(1);
 
-  if (typeof window === "undefined") {
-    return null
+  if ((typeof window === "undefined") | undefined) {
+    return null;
   }
-  let scale = window.outerHeight + window.outerWidth
+  let scale = window.outerHeight + window.outerWidth;
 
   const appenderFunction = () => {
     if (listOfCards.length > 0) {
@@ -29,6 +29,21 @@ const TarotScreen = () => {
     }
   };
 
+  const scalingHandler = (type) => {
+    if (scaleRatio <= 0) {
+      return;
+    }
+    switch (type) {
+      case "ZOOM_IN":
+        setScaleRatio(scaleRatio + 0.25);
+        break;
+      case "ZOOM_OUT":
+        setScaleRatio(scaleRatio - 0.25);
+        break;
+      default:
+        return;
+    }
+  };
 
   const styles = {
     imageStyle: {
@@ -77,10 +92,16 @@ const TarotScreen = () => {
       alignSelf: "center",
       width: 40,
       height: 40,
+      userSelect: "none",
+    },
+    buttonStyle: {
+      padding: 5,
+      margin: 5,
+      borderRadius: 10,
     },
   };
   return (
-    <>
+    <div>
       <DeckSelectorModal deckSelect={(val) => dispatch(selectDeck(val))} />
       <div
         style={{
@@ -99,6 +120,7 @@ const TarotScreen = () => {
             quality={100}
           />
         </div>
+
         <div
           style={{
             ...styles.contentContainer,
@@ -107,7 +129,31 @@ const TarotScreen = () => {
           }}
         >
           {listOfCards.length > 0 && (
-            <div>
+            <div style={{ display: "flex", flexDirection: "row", position:"absolute",  alignItems:"center"}}>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                }}
+              >
+                <Button
+                  onClick={() => scalingHandler("ZOOM_IN")}
+                  variant="outline-light"
+                  style={styles.buttonStyle}
+                >
+                  <ZoomIn />
+                </Button>
+                <Button
+                  onClick={() => scalingHandler("ZOOM_OUT")}
+                  variant="outline-light"
+                  style={styles.buttonStyle}
+                >
+                  <ZoomOut />
+                </Button>
+                <Button variant="outline-light" style={styles.buttonStyle}>
+                  <ArrowCounterclockwise />
+                </Button>
+              </div>
               <div
                 onClick={() => appenderFunction()}
                 style={styles.cardBackStyle}
@@ -119,13 +165,13 @@ const TarotScreen = () => {
           {usedList.map((element, index) => {
             return (
               <div key={index}>
-                <CardContainer card={element} />
+                <CardContainer scaleRatio={scaleRatio} card={element} />
               </div>
             );
           })}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
