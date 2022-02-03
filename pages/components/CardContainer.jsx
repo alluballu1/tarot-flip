@@ -1,11 +1,12 @@
-import { useDragControls, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import React, { useState } from "react";
 import { ArrowRepeat } from "react-bootstrap-icons";
 const CardContainer = (props) => {
+  const scale = window.outerHeight+window.outerWidth
   const [rotation, setRotation] = useState(0);
-  if(!props.card){
-    return null
+  if (!props.card) {
+    return null;
   }
   return (
     <div
@@ -13,14 +14,17 @@ const CardContainer = (props) => {
         dislpay: "flex",
         alignItems: "center",
         justifyContent: "center",
-        opacity:"100%"
+        opacity: "100%",
+        transform:`scale(${scale/3000})`
       }}
+      
+      id="tarot-motion-container"
     >
       <motion.div
         style={{
-          width: 220,
-          height: 350,
           position: "absolute",
+          width: 220,
+          height:350,
           zIndex: 10,
           background: "white",
           borderWidth: 1,
@@ -28,7 +32,6 @@ const CardContainer = (props) => {
           cursor: "move",
           borderRadius: 10,
           padding: 10,
-          
         }}
         dragMomentum={0}
         drag
@@ -40,7 +43,7 @@ const CardContainer = (props) => {
             display: "flex",
             flexDirection: "row",
             justifyContent: "space-evenly",
-            fontSize:15
+            fontSize: 15,
           }}
         >
           {props.card.name}
@@ -60,7 +63,14 @@ const CardContainer = (props) => {
             onClick={() => setRotation(rotation + 90)}
           />
         </div>
-        <Image alt={props.card} src={`/tarotThoth/${props.card.cardName}` /* `/tarot/${props.card}` */} width={200} height={300} />
+        <Image
+          alt={props.card}
+          src={
+            `/tarotThoth/${props.card.cardName}` /* `/tarot/${props.card}` */
+          }
+          width={200}
+          height={300}
+        />
       </motion.div>
     </div>
   );

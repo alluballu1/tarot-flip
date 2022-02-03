@@ -14,7 +14,7 @@ const tarotDeckData = [
     },
     {
       name: "Prince of Disks",
-      cardName: "prince-of-disks-thoth.png",
+      cardName: "prince-of-disks.png",
     },
     {
       name: "10 of Disks",
@@ -34,7 +34,7 @@ const tarotDeckData = [
     },
     {
       name: "6 of Disks",
-      cardName: "6-of-disks-thoth.png",
+      cardName: "6-of-disk-thoth.png",
     },
     {
       name: "5 of Disks",
@@ -50,7 +50,7 @@ const tarotDeckData = [
     },
     {
       name: "2 of Disks",
-      cardName: "2-of-disks-thoth.png",
+      cardName: "2-of-disk-thoth.png",
     },
     {
       name: "Ace of Disks",
@@ -262,7 +262,7 @@ const tarotDeckData = [
     },
     {
       name: "The Hanged Man",
-      cardName: "the-hanged-man-thoth.png",
+      cardName: "the-hanged-man-thoth.jpg",
     },
     {
       name: "The Lust",
@@ -274,7 +274,7 @@ const tarotDeckData = [
     },
     {
       name: "The Hermit",
-      cardName: "the-hermit-thoth.png",
+      cardName: "hermit-thoth.jpg",
     },
     {
       name: "The Adjustment",
@@ -302,7 +302,7 @@ const tarotDeckData = [
     },
     {
       name: "The Priestess",
-      cardName: "9-of-swords-thoth-tarot.png",
+      cardName: "the-pristess-thoh-tarot.png",
     },
     {
       name: "The Magus",

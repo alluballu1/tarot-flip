@@ -10,18 +10,26 @@ import { useDispatch, useSelector } from "react-redux";
 import { removeCard, selectDeck } from "../../reducers/tarotReducer";
 
 const TarotScreen = () => {
+
+
   const listOfCards = useSelector((state) => state.tarot);
   const dispatch = useDispatch();
   const [usedList, setUsedList] = useState([]);
 
-  const appenderFunction = () => {
-   if(listOfCards.length>0){
-         const random = Math.floor(Math.random() * listOfCards.length) ;
-    setUsedList(arr => [...arr, listOfCards[random]])
-    dispatch(removeCard(listOfCards[random]))
-   }
+  if (typeof window === "undefined") {
+    return null
+  }
+  let scale = window.outerHeight + window.outerWidth
 
+  const appenderFunction = () => {
+    if (listOfCards.length > 0) {
+      const random = Math.floor(Math.random() * listOfCards.length);
+      setUsedList((arr) => [...arr, listOfCards[random]]);
+      dispatch(removeCard(listOfCards[random]));
+    }
   };
+
+
   const styles = {
     imageStyle: {
       position: "fixed",
@@ -58,7 +66,8 @@ const TarotScreen = () => {
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
-      background:"grey"
+      background: "grey",
+      transform: `scale(${scale / 2920})`,
     },
     countStyle: {
       background: "white",
@@ -68,8 +77,7 @@ const TarotScreen = () => {
       alignSelf: "center",
       width: 40,
       height: 40,
-    }
-
+    },
   };
   return (
     <>
@@ -91,28 +99,30 @@ const TarotScreen = () => {
             quality={100}
           />
         </div>
-        <div style={{...styles.contentContainer, display: "flex", flexDirection: "row" }}>
+        <div
+          style={{
+            ...styles.contentContainer,
+            display: "flex",
+            flexDirection: "row",
+          }}
+        >
           {listOfCards.length > 0 && (
-            <div >
+            <div>
               <div
                 onClick={() => appenderFunction()}
                 style={styles.cardBackStyle}
               >
-                <p
-                  style={styles.countStyle}
-                >
-                  {listOfCards.length}
-                </p>
+                <p style={styles.countStyle}>{listOfCards.length}</p>
               </div>
             </div>
           )}
           {usedList.map((element, index) => {
-                return (
-                  <div key={index}>
-                    <CardContainer card={element} />
-                  </div>
-                );
-              })}
+            return (
+              <div key={index}>
+                <CardContainer card={element} />
+              </div>
+            );
+          })}
         </div>
       </div>
     </>
