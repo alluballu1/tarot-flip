@@ -25,13 +25,19 @@ const TarotScreen = () => {
     if (listOfCards.length > 0) {
       const random = Math.floor(Math.random() * listOfCards.length);
       setUsedList((arr) => [...arr, listOfCards[random]]);
-      console.log(listOfCards[random])
+      console.log(listOfCards[random]);
       dispatch(removeCard(listOfCards[random]));
     }
   };
 
-  const scalingHandler = (type) => {
+  const resetDeck = () => {
+    if (window.confirm("Reset deck?")) {
+      dispatch(selectDeck(usedDeck));
+      setUsedList([]);
+    }
+  };
 
+  const scalingHandler = (type) => {
     switch (type) {
       case "ZOOM_IN":
         setScaleRatio(scaleRatio + 0.25);
@@ -101,14 +107,17 @@ const TarotScreen = () => {
   };
   return (
     <div>
-      <DeckSelectorModal setDeck={(val) => setUsedDeck(val)} deckSelect={(val) => dispatch(selectDeck(val))} />
+      <DeckSelectorModal
+        setDeck={(val) => setUsedDeck(val)}
+        deckSelect={(val) => dispatch(selectDeck(val))}
+      />
       <div
         style={{
           width: "100vw",
           display: "flex",
           justifyContent: "center",
           height: "100%",
-          userSelect:"none"
+          userSelect: "none",
         }}
       >
         <div style={styles.imageStyle}>
@@ -124,12 +133,18 @@ const TarotScreen = () => {
         <div
           style={{
             ...styles.contentContainer,
-            display: "flex",
-            flexDirection: "row",
           }}
         >
           {listOfCards.length > 0 && (
-            <div style={{ display: "flex", flexDirection: "row", position:"absolute",  alignItems:"center"}}>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+                position: "absolute",
+                top: 100,
+              }}
+            >
               <div
                 style={{
                   display: "flex",
@@ -150,7 +165,11 @@ const TarotScreen = () => {
                 >
                   <ZoomOut />
                 </Button>
-                <Button variant="outline-light" style={styles.buttonStyle}>
+                <Button
+                  onClick={() => resetDeck()}
+                  variant="outline-light"
+                  style={styles.buttonStyle}
+                >
                   <ArrowCounterclockwise />
                 </Button>
               </div>
@@ -165,7 +184,11 @@ const TarotScreen = () => {
           {usedList.map((element, index) => {
             return (
               <div key={index}>
-                <CardContainer usedDeck={usedDeck} scaleRatio={scaleRatio} card={element} />
+                <CardContainer
+                  usedDeck={usedDeck}
+                  scaleRatio={scaleRatio}
+                  card={element}
+                />
               </div>
             );
           })}
