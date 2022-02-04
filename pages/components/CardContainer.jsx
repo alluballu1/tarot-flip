@@ -3,6 +3,7 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { ArrowRepeat } from "react-bootstrap-icons";
 const CardContainer = (props) => {
+  const dictionary = {0:"tarotThoth", 1:"RiderTarot"}
   const [rotation, setRotation] = useState(0);
   if (!props.card) {
     return null;
@@ -20,7 +21,7 @@ const CardContainer = (props) => {
           alignItems: "center",
           justifyContent: "center",
           position: "relative",
-          transformOrigin: "top left",
+          transformOrigin: "center center",
           opacity: "100%",
           transform: `scale(${(scale / 2920) * props.scaleRatio})`,
         }}
@@ -72,7 +73,7 @@ const CardContainer = (props) => {
           </div>
           <Image
             alt={props.card}
-            src={`/tarotThoth/${props.card.cardName}`}
+            src={`/${dictionary[props.usedDeck]}/${props.card.cardName}`}
             width={200}
             height={300}
           />

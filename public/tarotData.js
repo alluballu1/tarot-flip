@@ -316,319 +316,318 @@ const tarotDeckData = [
 
   [
     {
-      0: {
-        name: "King of Pentacles",
-        cardName: "KingOfPentacles.jpg",
-      },
-      1: {
-        name: "Queen of Pentacles",
-        cardName: "QueenOfPentacles.jpg",
-      },
-      2: {
-        name: "Knight of Pentacles",
-        cardName: "KnightOfPentacles.jpg",
-      },
-      3: {
-        name: "Page of Pentacles",
-        cardName: "PageOfPentacles.jpg",
-      },
-      4: {
-        name: "10 of Pentacles",
-        cardName: "TenOfPentacles.jpg",
-      },
-      5: {
-        name: "9 of Pentacles",
-        cardName: "NineOfPentacles.jpg",
-      },
-      6: {
-        name: "8 of Pentacles",
-        cardName: "EightOfPentacles.jpg",
-      },
-      7: {
-        name: "7 of Pentacles",
-        cardName: "SevenOfPentacles.jpg",
-      },
-      8: {
-        name: "6 of Pentacles",
-        cardName: "SixOfPentacles.jpg",
-      },
-      9: {
-        name: "5 of Pentacles",
-        cardName: "FiveOfPentacles.jpg",
-      },
-      10: {
-        name: "4 of Pentacles",
-        cardName: "FourOfPentacles.jpg",
-      },
-      11: {
-        name: "3 of Pentacles",
-        cardName: "ThreeOfPentacles.jpg",
-      },
-      12: {
-        name: "2 of Pentacles",
-        cardName: "TwoOfPentacles.jpg",
-      },
-      13: {
-        name: "Ace of Pentacles",
-        cardName: "AceOfPentacles.jpg",
-      },
-      14: {
-        name: "Knight of Swords",
-        cardName: "KnightOfSwords.jpg",
-      },
-      15: {
-        name: "Queen of Swords",
-        cardName: "QueenOfSwords.jpg",
-      },
-      16: {
-        name: "Knight of Swords",
-        cardName: "KnightOfSwords.jpg",
-      },
-      17: {
-        name: "Page of Swords",
-        cardName: "PageOfSwords.jpg",
-      },
-      18: {
-        name: "10 of Swords",
-        cardName: "TenOfSwords.jpg",
-      },
-      19: {
-        name: "9 of Swords",
-        cardName: "NineOfSwords.jpg",
-      },
-      20: {
-        name: "8 of Swords",
-        cardName: "EightOfSwords.jpg",
-      },
-      20: {
-        name: "7 of Swords",
-        cardName: "SevenOfSwords.jpg",
-      },
-      21: {
-        name: "6 of Swords",
-        cardName: "SixOfSwords.jpg",
-      },
-      22: {
-        name: "5 of Swords",
-        cardName: "FiveOfSwords.jpg",
-      },
-      23: {
-        name: "4 of Swords",
-        cardName: "FourOfSwords.jpg",
-      },
-      24: {
-        name: "3 of Swords",
-        cardName: "ThreeOfSwords.jpg",
-      },
-      25: {
-        name: "2 of Swords",
-        cardName: "TwoOfSwords.jpg",
-      },
-      26: {
-        name: "Ace of Swords",
-        cardName: "AceOfSwords.jpg",
-      },
-      27: {
-        name: "Knight of Cups",
-        cardName: "KnightOfCups.jpg",
-      },
-      28: {
-        name: "Queen of Cups",
-        cardName: "QueenOfCups.jpg",
-      },
-      29: {
-        name: "Knight of Cups",
-        cardName: "KnightOfCups.jpg",
-      },
-      30: {
-        name: "Page of Cups",
-        cardName: "PageOfCups.jpg",
-      },
-      31: {
-        name: "10 of Cups",
-        cardName: "TenOfCups.jpg",
-      },
-      32: {
-        name: "9 of Cups",
-        cardName: "NineOfCups.jpg",
-      },
-      33: {
-        name: "8 of Cups",
-        cardName: "EightOfCups.jpg",
-      },
-      34: {
-        name: "7 of Cups",
-        cardName: "SevenOfCups.jpg",
-      },
-      35: {
-        name: "6 of Cups",
-        cardName: "SixOfCups.jpg",
-      },
-      36: {
-        name: "5 of Cups",
-        cardName: "FiveOfCups.jpg",
-      },
-      37: {
-        name: "4 of Cups",
-        cardName: "FourOfCups.jpg",
-      },
-      38: {
-        name: "3 of Cups",
-        cardName: "ThreeOfCups.jpg",
-      },
-      39: {
-        name: "2 of Cups",
-        cardName: "TwoOfCups.jpg",
-      },
-      40: {
-        name: "Ace of Cups",
-        cardName: "AceOfCups.jpg",
-      },
-      41: {
-        name: "Knight of Wands",
-        cardName: "KnightOfWands.jpg",
-      },
-      42: {
-        name: "Queen of Wands",
-        cardName: "QueenOfWands.jpg",
-      },
-      43: {
-        name: "Knight of Wands",
-        cardName: "KnightOfWands.jpg",
-      },
-      44: {
-        name: "Page of Wands",
-        cardName: "PageOfWands.jpg",
-      },
-      45: {
-        name: "10 of Wands",
-        cardName: "TenOfWands.jpg",
-      },
-      46: {
-        name: "9 of Wands",
-        cardName: "NineOfWands.jpg",
-      },
-      47: {
-        name: "8 of Wands",
-        cardName: "EightOfWands.jpg",
-      },
-      48: {
-        name: "7 of Wands",
-        cardName: "SevenOfWands.jpg",
-      },
-      49: {
-        name: "6 of Wands",
-        cardName: "SixOfWands.jpg",
-      },
-      50: {
-        name: "5 of Wands",
-        cardName: "FiveOfWands.jpg",
-      },
-      51: {
-        name: "4 of Wands",
-        cardName: "FourOfWands.jpg",
-      },
-      52: {
-        name: "3 of Wands",
-        cardName: "ThreeOfWands.jpg",
-      },
-      53: {
-        name: "2 of Wands",
-        cardName: "TwoOfWands.jpg",
-      },
-      54: {
-        name: "Ace of Wands",
-        cardName: "AceOfWands.jpg",
-      },
-      55: {
-        name: "The World",
-        cardName: "TheWorld.jpg",
-      },
-      56: {
-        name: "The Judgement",
-        cardName: "TheLastJudgement.jpg",
-      },
-      57: {
-        name: "The Sun",
-        cardName: "TheSun.jpg",
-      },
-      58: {
-        name: "The Moon",
-        cardName: "TheMoon.jpg",
-      },
-      59: {
-        name: "The Star",
-        cardName: "TheStar.jpg",
-      },
-      60: {
-        name: "The Tower",
-        cardName: "TheTower.jpg",
-      },
-      61: {
-        name: "The Devil",
-        cardName: "TheDevil.jpg",
-      },
-      62: {
-        name: "Temperance",
-        cardName: "Temperance.jpg",
-      },
-      63: {
-        name: "Death",
-        cardName: "Death.jpg",
-      },
-      64: {
-        name: "The Hanged Man",
-        cardName: "TheHangedMan.jpg",
-      },
-      65: {
-        name: "Justice",
-        cardName: "Justice.jpg",
-      },
-      67: {
-        name: "Wheel of Fortune",
-        cardName: "WheelOfFortune.jpg",
-      },
-      68: {
-        name: "The Hermit",
-        cardName: "TheHermit.jpg",
-      },
-      69: {
-        name: "Strength",
-        cardName: "Fortitude.jpg",
-      },
-      70: {
-        name: "The Chariot",
-        cardName: "TheChariot.jpg",
-      },
-      71: {
-        name: "The Lovers",
-        cardName: "TheLovers.jpg",
-      },
-      72: {
-        name: "The Hierophant",
-        cardName: "TheHierophant.jpg",
-      },
-      73: {
-        name: "The Emperor",
-        cardName: "TheEmperor.jpg",
-      },
-      74: {
-        name: "The Empress",
-        cardName: "TheEmpress.jpg",
-      },
-      75: {
-        name: "The Priestess",
-        cardName: "ThePriestess.jpg",
-      },
-      76: {
-        name: "The Magician",
-        cardName: "TheMagician.jpg",
-      },
-      77: {
-        name: "The Fool",
-        cardName: "TheFool.jpg",
-      },
+      name: "King of Pentacles",
+      cardName: "KingOfPentacles.jpg",
     },
+    {
+      name: "Queen of Pentacles",
+      cardName: "QueenOfPentacles.jpg",
+    },
+    {
+      name: "Knight of Pentacles",
+      cardName: "KnightOfPentacles.jpg",
+    },
+    {
+      name: "Page of Pentacles",
+      cardName: "PageOfPentacles.jpg",
+    },
+    {
+      name: "10 of Pentacles",
+      cardName: "TenOfPentacles.jpg",
+    },
+    {
+      name: "9 of Pentacles",
+      cardName: "NineOfPentacles.jpg",
+    },
+    {
+      name: "8 of Pentacles",
+      cardName: "EightOfPentacles.jpg",
+    },
+    {
+      name: "7 of Pentacles",
+      cardName: "SevenOfPentacles.jpg",
+    },
+    {
+      name: "6 of Pentacles",
+      cardName: "SixOfPentacles.jpg",
+    },
+    {
+      name: "5 of Pentacles",
+      cardName: "FiveOfPentacles.jpg",
+    },
+    {
+      name: "4 of Pentacles",
+      cardName: "FourOfPentacles.jpg",
+    },
+    {
+      name: "3 of Pentacles",
+      cardName: "ThreeOfPentacles.jpg",
+    },
+    {
+      name: "2 of Pentacles",
+      cardName: "TwoOfPentacles.jpg",
+    },
+    {
+      name: "Ace of Pentacles",
+      cardName: "AceOfPentacles.jpg",
+    },
+    {
+      name: "Knight of Swords",
+      cardName: "KnightOfSwords.jpg",
+    },
+    {
+      name: "Queen of Swords",
+      cardName: "QueenOfSwords.jpg",
+    },
+    {
+      name: "Knight of Swords",
+      cardName: "KnightOfSwords.jpg",
+    },
+    {
+      name: "Page of Swords",
+      cardName: "PageOfSwords.jpg",
+    },
+    {
+      name: "10 of Swords",
+      cardName: "TenOfSwords.jpg",
+    },
+    {
+      name: "9 of Swords",
+      cardName: "NineOfSwords.jpg",
+    },
+    {
+      name: "8 of Swords",
+      cardName: "EightOfSwords.jpg",
+    },
+    {
+      name: "7 of Swords",
+      cardName: "SevenOfSwords.jpg",
+    },
+    {
+      name: "6 of Swords",
+      cardName: "SixOfSwords.jpg",
+    },
+    {
+      name: "5 of Swords",
+      cardName: "FiveOfSwords.jpg",
+    },
+    {
+      name: "4 of Swords",
+      cardName: "FourOfSwords.jpg",
+    },
+    {
+      name: "3 of Swords",
+      cardName: "ThreeOfSwords.jpg",
+    },
+    {
+      name: "2 of Swords",
+      cardName: "TwoOfSwords.jpg",
+    },
+    {
+      name: "Ace of Swords",
+      cardName: "AceOfSwords.jpg",
+    },
+    {
+      name: "Knight of Cups",
+      cardName: "KnightOfCups.jpg",
+    },
+    {
+      name: "Queen of Cups",
+      cardName: "QueenOfCups.jpg",
+    },
+    {
+      name: "Knight of Cups",
+      cardName: "KnightOfCups.jpg",
+    },
+    {
+      name: "Page of Cups",
+      cardName: "PageOfCups.jpg",
+    },
+    {
+      name: "10 of Cups",
+      cardName: "TenOfCups.jpg",
+    },
+    {
+      name: "9 of Cups",
+      cardName: "NineOfCups.jpg",
+    },
+    {
+      name: "8 of Cups",
+      cardName: "EightOfCups.jpg",
+    },
+    {
+      name: "7 of Cups",
+      cardName: "SevenOfCups.jpg",
+    },
+    {
+      name: "6 of Cups",
+      cardName: "SixOfCups.jpg",
+    },
+    {
+      name: "5 of Cups",
+      cardName: "FiveOfCups.jpg",
+    },
+    {
+      name: "4 of Cups",
+      cardName: "FourOfCups.jpg",
+    },
+    {
+      name: "3 of Cups",
+      cardName: "ThreeOfCups.jpg",
+    },
+    {
+      name: "2 of Cups",
+      cardName: "TwoOfCups.jpg",
+    },
+    {
+      name: "Ace of Cups",
+      cardName: "AceOfCups.jpg",
+    },
+    {
+      name: "Knight of Wands",
+      cardName: "KnightOfWands.jpg",
+    },
+    {
+      name: "Queen of Wands",
+      cardName: "QueenOfWands.jpg",
+    },
+    {
+      name: "Knight of Wands",
+      cardName: "KnightOfWands.jpg",
+    },
+    {
+      name: "Page of Wands",
+      cardName: "PageOfWands.jpg",
+    },
+    {
+      name: "10 of Wands",
+      cardName: "TenOfWands.jpg",
+    },
+    {
+      name: "9 of Wands",
+      cardName: "NineOfWands.jpg",
+    },
+    {
+      name: "8 of Wands",
+      cardName: "EightOfWands.jpg",
+    },
+    {
+      name: "7 of Wands",
+      cardName: "SevenOfWands.jpg",
+    },
+    {
+      name: "6 of Wands",
+      cardName: "SixOfWands.jpg",
+    },
+    {
+      name: "5 of Wands",
+      cardName: "FiveOfWands.jpg",
+    },
+    {
+      name: "4 of Wands",
+      cardName: "FourOfWands.jpg",
+    },
+    {
+      name: "3 of Wands",
+      cardName: "ThreeOfWands.jpg",
+    },
+    {
+      name: "2 of Wands",
+      cardName: "TwoOfWands.jpg",
+    },
+    {
+      name: "Ace of Wands",
+      cardName: "AceOfWands.jpg",
+    },
+    {
+      name: "The World",
+      cardName: "TheWorld.jpg",
+    },
+    {
+      name: "The Judgement",
+      cardName: "TheLastJudgement.jpg",
+    },
+    {
+      name: "The Sun",
+      cardName: "TheSun.jpg",
+    },
+    {
+      name: "The Moon",
+      cardName: "TheMoon.jpg",
+    },
+    {
+      name: "The Star",
+      cardName: "TheStar.jpg",
+    },
+    {
+      name: "The Tower",
+      cardName: "TheTower.jpg",
+    },
+    {
+      name: "The Devil",
+      cardName: "TheDevil.jpg",
+    },
+    {
+      name: "Temperance",
+      cardName: "Temperance.jpg",
+    },
+    {
+      name: "Death",
+      cardName: "Death.jpg",
+    },
+    {
+      name: "The Hanged Man",
+      cardName: "TheHangedMan.jpg",
+    },
+    {
+      name: "Justice",
+      cardName: "Justice.jpg",
+    },
+    {
+      name: "Wheel of Fortune",
+      cardName: "WheelOfFortune.jpg",
+    },
+    {
+      name: "The Hermit",
+      cardName: "TheHermit.jpg",
+    },
+    {
+      name: "Strength",
+      cardName: "Fortitude.jpg",
+    },
+    {
+      name: "The Chariot",
+      cardName: "TheChariot.jpg",
+    },
+    {
+      name: "The Lovers",
+      cardName: "TheLovers.jpg",
+    },
+    {
+      name: "The Hierophant",
+      cardName: "TheHierophant.jpg",
+    },
+    {
+      name: "The Emperor",
+      cardName: "TheEmperor.jpg",
+    },
+    {
+      name: "The Empress",
+      cardName: "TheEmpress.jpg",
+    },
+    {
+      name: "The Priestess",
+      cardName: "TheHighPriestess.jpg",
+    },
+    {
+      name: "The Magician",
+      cardName: "TheMagician.jpg",
+    },
+    {
+      name: "The Fool",
+      cardName: "TheFool.jpg",
+    },
+    
   ],
 ];
 

@@ -45,6 +45,7 @@ export default function Home() {
         display: "flex",
         justifyContent: "center",
         height: "100%",
+        userSelect:"none"
       }}
     >
       <div style={styles.imageStyle}>

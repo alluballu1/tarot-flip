@@ -38,6 +38,7 @@ const tarotReducer = (state = [], action) => {
       return [...action.data];
     case "REMOVE_CARD":
         const temp = state
+        console.log(state)
         const index = temp.map(element => element.name).indexOf(action.data.name)
         const slice = temp.splice(index, 1)
       return temp;

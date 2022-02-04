@@ -15,5 +15,5 @@ a {
   box-sizing: border-box;
 }
 #tarot-motion-container{
-  transform-origin: top left;
+  transform-origin: center center;
 }

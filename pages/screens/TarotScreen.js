@@ -15,7 +15,7 @@ const TarotScreen = () => {
   const dispatch = useDispatch();
   const [usedList, setUsedList] = useState([]);
   const [scaleRatio, setScaleRatio] = useState(1);
-
+  const [usedDeck, setUsedDeck] = useState(null);
   if ((typeof window === "undefined") | undefined) {
     return null;
   }
@@ -25,12 +25,13 @@ const TarotScreen = () => {
     if (listOfCards.length > 0) {
       const random = Math.floor(Math.random() * listOfCards.length);
       setUsedList((arr) => [...arr, listOfCards[random]]);
+      console.log(listOfCards[random])
       dispatch(removeCard(listOfCards[random]));
     }
   };
 
   const scalingHandler = (type) => {
-    if (scaleRatio <= 0) {
+    if (scaleRatio <= 0 || type !== "ZOOM_OUT") {
       return;
     }
     switch (type) {
@@ -102,13 +103,14 @@ const TarotScreen = () => {
   };
   return (
     <div>
-      <DeckSelectorModal deckSelect={(val) => dispatch(selectDeck(val))} />
+      <DeckSelectorModal setDeck={(val) => setUsedDeck(val)} deckSelect={(val) => dispatch(selectDeck(val))} />
       <div
         style={{
           width: "100vw",
           display: "flex",
           justifyContent: "center",
           height: "100%",
+          userSelect:"none"
         }}
       >
         <div style={styles.imageStyle}>
@@ -165,7 +167,7 @@ const TarotScreen = () => {
           {usedList.map((element, index) => {
             return (
               <div key={index}>
-                <CardContainer scaleRatio={scaleRatio} card={element} />
+                <CardContainer usedDeck={usedDeck} scaleRatio={scaleRatio} card={element} />
               </div>
             );
           })}

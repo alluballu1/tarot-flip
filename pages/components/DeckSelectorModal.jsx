@@ -6,6 +6,7 @@ const DeckSelectorModal = (props) => {
     const [visibility, setVisibility] = useState(true);
     const selectHandler = (value) => {
         props.deckSelect(value)
+        props.setDeck(value)
         setVisibility(!visibility)
     }
   return (
@@ -32,7 +33,7 @@ const DeckSelectorModal = (props) => {
         <Button variant="outline-light" onClick={() => selectHandler(0)}>
           Tarot Thoth
         </Button>
-        <Button disabled variant="outline-light" onClick={() => selectHandler(1)}>
+        <Button variant="outline-light" onClick={() => selectHandler(1)}>
           Rider–Waite
         </Button>
       </Modal.Body>
