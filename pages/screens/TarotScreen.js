@@ -16,6 +16,7 @@ const TarotScreen = () => {
   const [usedList, setUsedList] = useState([]);
   const [scaleRatio, setScaleRatio] = useState(1);
   const [usedDeck, setUsedDeck] = useState(null);
+
   if ((typeof window === "undefined") | undefined) {
     return null;
   }
@@ -49,6 +50,10 @@ const TarotScreen = () => {
         return;
     }
   };
+
+  const dictionary = {
+    0:"/tarotThoth/thoth-back.jpg",1:"/RiderTarot/tarot-back.jpg"
+  }
 
   const styles = {
     imageStyle: {
@@ -98,6 +103,7 @@ const TarotScreen = () => {
       width: 40,
       height: 40,
       userSelect: "none",
+      zIndex:10
     },
     buttonStyle: {
       padding: 5,
@@ -177,6 +183,13 @@ const TarotScreen = () => {
                 onClick={() => appenderFunction()}
                 style={styles.cardBackStyle}
               >
+                <Image
+                  alt="bg"
+                  src={dictionary[usedDeck]}
+                  layout="fill"
+                  objectFit="cover"
+                  quality={100}
+                />
                 <p style={styles.countStyle}>{listOfCards.length}</p>
               </div>
             </div>

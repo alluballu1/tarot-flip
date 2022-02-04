@@ -631,4 +631,6 @@ const tarotDeckData = [
   ],
 ];
 
+export const tarotBacks = ["thoth-back.jpg", "tarot-back.jpg"]
+
 export default tarotDeckData;
