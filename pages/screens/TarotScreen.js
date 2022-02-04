@@ -31,9 +31,7 @@ const TarotScreen = () => {
   };
 
   const scalingHandler = (type) => {
-    if (scaleRatio <= 0 || type !== "ZOOM_OUT") {
-      return;
-    }
+
     switch (type) {
       case "ZOOM_IN":
         setScaleRatio(scaleRatio + 0.25);
